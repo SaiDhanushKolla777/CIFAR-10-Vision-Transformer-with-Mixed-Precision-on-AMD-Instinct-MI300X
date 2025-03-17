@@ -156,4 +156,3 @@ This command repeatedly prints GPU stats—like utilization, memory usage, and t
 ## License
 
 © 2025 Sai Dhanush Kolla. All rights reserved.
-```
