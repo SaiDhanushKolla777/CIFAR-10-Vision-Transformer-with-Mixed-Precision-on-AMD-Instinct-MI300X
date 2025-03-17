@@ -1,4 +1,3 @@
-```markdown
 # CIFAR-10 Vision Transformer on AMD Instinct MI300X
 
 > **Mixed Precision (AMP)** • **Up to 50 Epochs** • **RandAugment** • **\~84% Final Accuracy** • **Early Stop at 90%**
@@ -69,7 +68,6 @@ This repository showcases a Vision Transformer (ViT) trained on **CIFAR-10** wit
 │   └── vit_final_mi300x.pth     # Final model checkpoint
 ├── analysis_mi300x.py           # (Optional) script to plot throughput scaling
 └── README.md                    # This file
-```
 
 ---
 
