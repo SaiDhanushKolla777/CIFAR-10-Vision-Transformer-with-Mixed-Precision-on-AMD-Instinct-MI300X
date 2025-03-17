@@ -107,15 +107,17 @@ This repository showcases a Vision Transformer (ViT) trained on **CIFAR-10** wit
 
 ## Visualizations
 
-### 1) Sample Predictions
+### 1) Sample Predictions!
 
-<img src="results/sample_predictions.png" width="550" alt="Sample Predictions" />
+[sample_predictions](https://github.com/user-attachments/assets/c55d83ac-34f6-4096-85b9-5b80d1e3cbde)
+
+
 
 Shows random test images with “True vs. Pred” labels. Titles are clearly spaced to avoid overlap.
 
 ### 2) Training Metrics
 
-<img src="results/training_metrics.png" width="550" alt="Training Metrics" />
+![training_metrics](https://github.com/user-attachments/assets/1af43994-e133-4e9e-b7fa-b9b9bf1eea9e)
 
 - **Left**: Train vs. Test Loss  
 - **Right**: Train vs. Test Accuracy  
@@ -124,7 +126,8 @@ Shows random test images with “True vs. Pred” labels. Titles are clearly spa
 
 If you run the optional analysis script, you get `mi300x_throughput_scaling.png`:
 
-<img src="results/mi300x_throughput_scaling.png" width="600" alt="Scaling Plot" />
+![mi300x_throughput_scaling](https://github.com/user-attachments/assets/0ea6f654-5788-4eed-9efd-39b28badcf2f)
+
 
 - **Left**: Actual vs. Ideal throughput (batch_size=1 as baseline)  
 - **Right**: Scaling efficiency in %
