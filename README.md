@@ -1,5 +1,5 @@
 
-# CIFAR-10 Vision Transformer on AMD Instinct MI300X
+# Vision Transformer on AMD Instinct MI300X
 
 > **Mixed Precision (AMP)** • **Up to 50 Epochs** • **RandAugment** • **\~84% Final Accuracy** • **Stop at 90%**
 
