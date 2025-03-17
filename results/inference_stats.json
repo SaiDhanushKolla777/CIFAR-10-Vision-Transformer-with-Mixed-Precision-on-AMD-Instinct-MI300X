@@ -1,0 +1,22 @@
+{
+  "1": {
+    "inference_time_ms": 3.47104549407959,
+    "images_per_sec": 288.0976356275526
+  },
+  "4": {
+    "inference_time_ms": 3.7419605255126953,
+    "images_per_sec": 1068.958363597903
+  },
+  "16": {
+    "inference_time_ms": 4.3267059326171875,
+    "images_per_sec": 3697.9633580786794
+  },
+  "64": {
+    "inference_time_ms": 5.294632911682129,
+    "images_per_sec": 12087.712418889285
+  },
+  "128": {
+    "inference_time_ms": 6.2491536140441895,
+    "images_per_sec": 20482.773813134638
+  }
+}
