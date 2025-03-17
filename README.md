@@ -134,7 +134,7 @@ If you run the analysis script, you get `mi300x_throughput_scaling.png`:
 While training, you can also track GPU usage in a separate terminal using **`rocm-smi`** every 2 seconds:
 
 ```bash
-watch -n 1 rocm-smi
+watch -n 1 rocm-smi --showtemp --showuse --showmeminfo=vram
 ```
 
 ![image](https://github.com/user-attachments/assets/1c1f63dd-2726-40d2-a53f-1d50c560c729)
