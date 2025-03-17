@@ -95,7 +95,7 @@ pip install tqdm matplotlib pandas
 | **`results/sample_predictions.png`** | Random test images showing “True” vs “Pred” labels                         |
 | **`results/inference_stats.json`**   | Inference throughput (images/sec) & latency (ms) for batch sizes [1..128]  |
 | **`checkpoints/vit_final_mi300x.pth`** | Final trained model weights in PyTorch format                              |
-| **`analysis/mi300x_throughput_scaling.png`** | (Optional) Throughput vs. batch size plot, if you run the analysis script |
+| **`analysis/mi300x_throughput_scaling.png`** | Throughput vs. batch size plot, if you run the analysis script |
 
 ### Sample Predictions
 
