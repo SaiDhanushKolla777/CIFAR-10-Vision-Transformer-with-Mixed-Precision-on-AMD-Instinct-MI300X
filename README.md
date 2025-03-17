@@ -97,6 +97,35 @@ pip install tqdm matplotlib pandas
 | **`checkpoints/vit_final_mi300x.pth`** | Final trained model weights in PyTorch format                              |
 | **`analysis/mi300x_throughput_scaling.png`** | (Optional) Throughput vs. batch size plot, if you run the analysis script |
 
+## Visualizations
+
+### 1) Sample Predictions
+
+
+![sample_predictions](https://github.com/user-attachments/assets/de94dc86-168d-43f9-a109-cf4095c37bda)
+
+
+
+Shows random test images with “True vs. Pred” labels. Titles are clearly spaced to avoid overlap.
+
+### 2) Training Metrics
+
+![training_metrics](https://github.com/user-attachments/assets/2d359bf8-6298-430a-b6e8-c57037ce42a7)
+
+- **Left**: Train vs. Test Loss  
+- **Right**: Train vs. Test Accuracy  
+
+### 3) Throughput Scaling
+
+If you run the analysis script, you get `mi300x_throughput_scaling.png`:
+![mi300x_throughput_scaling](https://github.com/user-attachments/assets/fb77902c-a830-4c81-bf8f-c0feb2bf5fdd)
+
+
+- **Left**: Actual vs. Ideal throughput (batch_size=1 as baseline)  
+- **Right**: Scaling efficiency in %
+
+---
+
 **Sample**:
 ```
 [Epoch 49/50] Train Acc=82.10% | Test Acc=84.02%
@@ -115,4 +144,6 @@ pip install tqdm matplotlib pandas
 - **Bigger Dataset**: Test on CIFAR-100 or ImageNet for deeper benchmarks.
 
 ---
+
+
 
