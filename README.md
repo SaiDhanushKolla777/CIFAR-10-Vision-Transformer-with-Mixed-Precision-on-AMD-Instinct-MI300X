@@ -116,8 +116,3 @@ pip install tqdm matplotlib pandas
 
 ---
 
-## License
-
-This project is released under the [MIT License](LICENSE).  
-© 2025 YourName. All rights reserved.
-```
