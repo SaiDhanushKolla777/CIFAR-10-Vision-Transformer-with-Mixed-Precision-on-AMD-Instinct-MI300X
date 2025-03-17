@@ -1,7 +1,7 @@
 
 # Vision Transformer on AMD Instinct MI300X
 
-> **Mixed Precision (AMP)** • **Up to 50 Epochs** • **RandAugment** • **\~84% Final Accuracy** • **Stop at 90%**
+> **Mixed Precision (AMP)** • **Up to 50 Epochs** • **RandAugment** • **\~84% Final Accuracy** • **Stop at 90%**  
 
 This repository features a **Vision Transformer** (ViT) for the **CIFAR-10** dataset, trained in **mixed precision** (using AMP) on an **AMD Instinct MI300X** GPU.  
 All code is provided as a **Jupyter Notebook**:  
@@ -16,8 +16,9 @@ All code is provided as a **Jupyter Notebook**:
 3. [Setup & Usage](#setup--usage)  
 4. [Notebook Sections](#notebook-sections)  
 5. [Outputs & Visualizations](#outputs--visualizations)  
-6. [Future Work](#future-work)  
-7. [License](#license)
+6. [Monitoring GPU Usage](#monitoring-gpu-usage)  
+7. [Future Work](#future-work)  
+8. [License](#license)
 
 ---
 
@@ -25,7 +26,7 @@ All code is provided as a **Jupyter Notebook**:
 
 - **Dataset**: CIFAR-10 (32×32 images, 10 classes, 50k training + 10k test).  
 - **Model**: Vision Transformer with patch size=4, 8 layers, embed_dim=384, 6 heads, **RandAugment** for data augmentation.  
-- **Precision**: Standard AMP (`autocast(enabled=True)`) on AMD MI300X.  
+- **Precision**: Standard AMP (`autocast(enabled=True)`) on AMD Instinct MI300X.  
 - **Training**: 50 epochs (or stop early at 90% test accuracy), batch size=128.  
 - **Inference**: Benchmarks throughput & latency at batch sizes [1,4,16,64,128], logs to `inference_stats.json`.  
 
@@ -47,7 +48,6 @@ All code is provided as a **Jupyter Notebook**:
 - **Python** ≥ 3.9  
 - **PyTorch** for ROCm 6.1 (or whichever ROCm version you use)  
 - `torchvision`, `tqdm`, `matplotlib`, `numpy`, etc.
-
 
 ```bash
 # Example: installing PyTorch for ROCm 6.1
@@ -97,34 +97,27 @@ pip install tqdm matplotlib pandas
 | **`checkpoints/vit_final_mi300x.pth`** | Final trained model weights in PyTorch format                              |
 | **`analysis/mi300x_throughput_scaling.png`** | (Optional) Throughput vs. batch size plot, if you run the analysis script |
 
-## Visualizations
-
-### 1) Sample Predictions
-
+### Sample Predictions
 
 ![sample_predictions](https://github.com/user-attachments/assets/de94dc86-168d-43f9-a109-cf4095c37bda)
 
+**Description**: Shows random test images with “True vs. Pred” labels. Titles are clearly spaced to avoid overlap.
 
-
-Shows random test images with “True vs. Pred” labels. Titles are clearly spaced to avoid overlap.
-
-### 2) Training Metrics
+### Training Metrics
 
 ![training_metrics](https://github.com/user-attachments/assets/2d359bf8-6298-430a-b6e8-c57037ce42a7)
 
 - **Left**: Train vs. Test Loss  
 - **Right**: Train vs. Test Accuracy  
 
-### 3) Throughput Scaling
+### Throughput Scaling
 
 If you run the analysis script, you get `mi300x_throughput_scaling.png`:
-![mi300x_throughput_scaling](https://github.com/user-attachments/assets/fb77902c-a830-4c81-bf8f-c0feb2bf5fdd)
 
+![mi300x_throughput_scaling](https://github.com/user-attachments/assets/fb77902c-a830-4c81-bf8f-c0feb2bf5fdd)
 
 - **Left**: Actual vs. Ideal throughput (batch_size=1 as baseline)  
 - **Right**: Scaling efficiency in %
-
----
 
 **Sample**:
 ```
@@ -133,6 +126,21 @@ If you run the analysis script, you get `mi300x_throughput_scaling.png`:
 [MAIN] Training completed in 13.18 minutes. Best test acc=84.02%
 [INFO] Inference stats saved: results/inference_stats.json
 ```
+
+---
+
+## Monitoring GPU Usage
+
+While training, you can also track GPU usage in a separate terminal using **`rocm-smi`** every 2 seconds:
+
+```bash
+watch -n 2 rocm-smi
+```
+
+![image](https://github.com/user-attachments/assets/1c1f63dd-2726-40d2-a53f-1d50c560c729)
+
+
+This command repeatedly prints GPU stats—like utilization, memory usage, and temperature—so you can confirm that training is running smoothly. Feel free to include a screenshot in the notebook to document GPU load or temperature if you like.
 
 ---
 
@@ -145,5 +153,8 @@ If you run the analysis script, you get `mi300x_throughput_scaling.png`:
 
 ---
 
+## License
 
-
+This project is open-sourced under the [MIT License](LICENSE).  
+© 2025 YourName. All rights reserved.
+```
